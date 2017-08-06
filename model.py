@@ -150,7 +150,7 @@ class DCGAN(object):
     try:
       tf.global_variables_initializer().run()
     except:
-      tf.initialize_all_variables().run()
+      tf.global_variables_initializer().run()
 
     self.g_sum = merge_summary([self.z_sum, self.d__sum,
       self.G_sum, self.d_loss_fake_sum, self.g_loss_sum])
